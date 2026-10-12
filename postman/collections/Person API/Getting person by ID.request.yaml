@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8080/people/find/897315440755862359
+method: GET
+order: 3000

@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8080/people/delete/897315440755862359
+method: DELETE
+order: 4000

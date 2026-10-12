@@ -1,0 +1,13 @@
+$kind: http-request
+description: ""
+url: http://localhost:8080/people/all
+method: GET
+body:
+  type: json
+  content: |-
+    {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "gender": "FEMALE"
+    }
+order: 2000
