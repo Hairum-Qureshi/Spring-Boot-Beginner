@@ -147,17 +147,16 @@ If the application starts successfully, you can access its endpoints through you
 
 ## API Endpoints
 
-The application currently provides a basic greeting endpoint.
+The application currently provides a greeting endpoint and basic CRUD operations for managing people.
 
 | Method | Endpoint | Description |
 |---|---|---|
 | GET | `/` | Returns a simple greeting message |
-| POST | `/people/add` | Returns a JSON object of the newly created user |
-|
+| POST | `/people/add` | Creates a new person and returns their data as a JSON object |
 | GET | `/people/all` | Returns a JSON array of all existing people |
-| GET | `/people/find/{id}` | Returns a JSON object of a user with the corresponding `id` |
-| PUT | `/people/edit/{id}` | Returns a JSON of the updated user |
-| DELETE | `/people/delete/{id}` | Returns a JSON response to inform you the user has successfully been deleted |
+| GET | `/people/find/{id}` | Returns a JSON object of the person matching the provided ID |
+| PUT | `/people/edit/{id}` | Updates an existing person and returns the updated data as JSON |
+| DELETE | `/people/delete/{id}` | Deletes a person and returns a JSON response confirming the deletion |
 
 ### Example Request
 
@@ -171,7 +170,9 @@ GET http://localhost:8080/
 Hello, Hairum!
 ```
 
-You can test this endpoint by navigating to the URL in your browser or sending a GET request through Postman.
+You can test the endpoint by navigating to the URL in your browser or sending a GET request through Postman.
+
+For the remaining endpoints, use Postman to send requests with the appropriate HTTP methods, parameters, and request bodies.
 
 Additional endpoints may be introduced as development progresses.
 
@@ -200,3 +201,11 @@ The purpose of this project is to develop a better understanding of:
 - Maven dependency management
 - Environment variables and externalized configuration
 - Backend application development using the Spring ecosystem
+
+## Project Status
+
+**Work in Progress — Educational Project**
+
+This project is actively used for learning and experimentation. Features, architecture, and implementation details are subject to change as I become more familiar with Spring Boot.
+
+The repository is not intended to represent a production-ready application.
