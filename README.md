@@ -18,6 +18,7 @@ The project is primarily intended for experimentation and hands-on learning rath
 | PostgreSQL | Relational database |
 | Neon | Serverless PostgreSQL hosting |
 | TSID Creator | Time-sorted unique identifier generation |
+| Lombok | For reducing boilerplate code
 | Maven | Dependency management and build automation |
 | Postman | API endpoint testing |
 
@@ -202,10 +203,3 @@ The purpose of this project is to develop a better understanding of:
 - Environment variables and externalized configuration
 - Backend application development using the Spring ecosystem
 
-## Project Status
-
-**Work in Progress — Educational Project**
-
-This project is actively used for learning and experimentation. Features, architecture, and implementation details are subject to change as I become more familiar with Spring Boot.
-
-The repository is not intended to represent a production-ready application.
