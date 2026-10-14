@@ -1,5 +1,5 @@
 package com.example.Spring_Boot_Beginner.controllers;
-import com.example.Spring_Boot_Beginner.entities.Person;
+import com.example.Spring_Boot_Beginner.entities.User;
 import com.example.Spring_Boot_Beginner.services.PersonService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,18 +9,18 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/people")
-public class PersonController {
+public class UserController {
 
     private final PersonService personService;
 
-    public PersonController(PersonService personService) {
+    public UserController(PersonService personService) {
         this.personService = personService;
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Person> createPerson(@RequestBody Person person) {
+    public ResponseEntity<User> createPerson(@RequestBody User person) {
 
-        Person savedPerson = personService.createPerson(person);
+        User savedPerson = personService.createPerson(person);
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -28,12 +28,12 @@ public class PersonController {
     }
 
     @GetMapping("/all")
-    public List<Person> getAllPeople() {
+    public List<User> getAllPeople() {
         return personService.getAllPeople();
     }
     
     @GetMapping("/find/{id}")
-    public Person getPersonById(@PathVariable Long id) {
+    public User getPersonById(@PathVariable Long id) {
         return personService.getPersonById(id);
     }
     

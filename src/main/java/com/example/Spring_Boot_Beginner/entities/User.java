@@ -10,7 +10,7 @@ import jakarta.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Person {
+public class User {
 
     @Id
     private Long id;
