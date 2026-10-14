@@ -1,23 +1,70 @@
 package com.example.Spring_Boot_Beginner.entities;
-import com.example.Spring_Boot_Beginner.enums.Gender;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.time.LocalDateTime;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
-@Table(name = "person")
+@Table(name = "users")
 @Getter
 @Setter
-@NoArgsConstructor
-public class User {
+public class User implements UserDetails {
 
     @Id
     private Long id;
 
-    private String firstName;
-    private String lastName;
+    @Column(unique=true, nullable=false, length=100)
+    private String username;
+    
+    @Column(unique=true, nullable=false)
+    private String email;
 
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
+    @Column(nullable = false)
+    private String password;
+
+    private boolean enabled;
+
+    private String verificationCode;
+
+    private LocalDateTime verificationCodeExpiredAt;
+    
+    public User() {}
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+    
+    @Override
+    public boolean isAccountNonExpired() {
+        // TODO - implement check functionality here
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        // TODO - implement check functionality here
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return enabled;
+    }
 }
