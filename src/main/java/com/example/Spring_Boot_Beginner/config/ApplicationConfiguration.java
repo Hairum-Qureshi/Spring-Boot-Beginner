@@ -1,6 +1,6 @@
 package com.example.Spring_Boot_Beginner.config;
 
-import com.example.Spring_Boot_Beginner.repositories.UserRepository;
+import com.example.Spring_Boot_Beginner.user.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,7 +22,8 @@ public class ApplicationConfiguration {
 
     @Bean
     UserDetailsService userDetailsService() {
-        return email -> userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        // NOTE: it's not actually 'username'; it can technically be called 'email'. It just corresponds to Spring Boot's username-related methods
+        return username -> userRepository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
     
     @Bean

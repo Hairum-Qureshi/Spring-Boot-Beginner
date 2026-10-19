@@ -1,4 +1,4 @@
-package com.example.Spring_Boot_Beginner.services;
+package com.example.Spring_Boot_Beginner.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

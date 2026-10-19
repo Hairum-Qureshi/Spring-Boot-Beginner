@@ -1,4 +1,4 @@
-package com.example.Spring_Boot_Beginner.entities;
+package com.example.Spring_Boot_Beginner.user;
 import lombok.Getter;
 import lombok.Setter;
 import jakarta.persistence.*;
@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name = "users")
 @Getter
 @Setter
-public class User implements UserDetails {
+public class UserEntity implements UserDetails {
 
     @Id
     private Long id;
@@ -33,9 +33,9 @@ public class User implements UserDetails {
 
     private LocalDateTime verificationCodeExpiredAt;
     
-    public User() {}
+    public UserEntity() {}
 
-    public User(String username, String email, String password) {
+    public UserEntity(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
