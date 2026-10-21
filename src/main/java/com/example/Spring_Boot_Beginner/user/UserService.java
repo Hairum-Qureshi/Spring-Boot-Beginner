@@ -1,5 +1,8 @@
 package com.example.Spring_Boot_Beginner.user;
+import com.example.Spring_Boot_Beginner.user.entities.User;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService {
@@ -9,5 +12,7 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-
+    public List<User> allUsers() {
+        return userRepository.findAll();
+    }
 }
